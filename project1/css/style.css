@@ -15,8 +15,8 @@ body {
   height: 95vh;
   background-image: linear-gradient(
       to right bottom,
-      rgba(126, 213, 111, 0.8),
-      rgba(40, 180, 131, 0.8)
+      rgba(101, 209, 82, 0.8),
+      rgba(32, 177, 127, 0.8)
     ),
     url("../img/hero.jpg");
   background-size: cover;
@@ -40,10 +40,12 @@ body {
   top: 45%;
   transform: translate(-50%, -50%);
   text-transform: uppercase;
+  text-align: center;
 }
 
 .heading-primary {
   color: white;
+  margin-bottom: 20px;
 }
 
 .heading-primary .main-text {
@@ -64,6 +66,38 @@ body {
   animation-name: moveInFromRight;
   animation-duration: 2s;
   animation-timing-function: ease-in;
+}
+
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  display: inline-block;
+  padding: 14px 35px;
+  border-radius: 25px;
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: white;
+  color: #777;
+}
+
+.btn-animated {
+  animation-name: moveInFromBottom;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-delay: 1s;
+  animation-fill-mode: backwards;
 }
 
 @keyframes moveInFromLeft {
@@ -95,5 +129,12 @@ body {
   100% {
     opacity: 1;
     transform: translate(0);
+  }
+}
+
+@keyframes moveInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
   }
 }
